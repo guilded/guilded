@@ -26,7 +26,9 @@ module Guilded
         # JavaScript
         if g.production? && g.use_remote_jquery
           js_groups = g.combined_js_srcs.partition { |src| src == g.jquery_js }
-          output = javascript_include_tag( g.jquery_remote_url )
+          output = request.ssl? ?
+                     javascript_include_tag( g.jquery_remote_url_secure ) :
+                     javascript_include_tag( g.jquery_remote_url )
           output << javascript_include_tag( js_groups[1], :cache => "cache/#{g.js_cache_name}" ) unless js_groups[1].nil?
         else
           output = javascript_include_tag( g.combined_js_srcs, :cache => "cache/#{g.js_cache_name}" )

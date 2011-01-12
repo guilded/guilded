@@ -234,6 +234,10 @@ module Guilded
       @config[:jquery_remote_url]
     end
 
+    def jquery_remote_url_secure
+      @config[:jquery_remote_url_secure]
+    end
+
     def use_remote_jquery
       @config[:use_remote_jquery]
     end
