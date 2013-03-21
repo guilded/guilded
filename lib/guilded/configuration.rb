@@ -13,6 +13,10 @@ module Guilded
       jquery_google_url_template.gsub /\{\{version\}\}/, version
     end
 
+    def local_jquery_name( version, min )
+      "assets/jquery-#{version}#{min ? '.min' : ''}"
+    end
+
   private
 
     def set_defaults

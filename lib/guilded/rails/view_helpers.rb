@@ -10,12 +10,8 @@ module Guilded::Rails
 
     def jquery_url( version, min )
       %w(development test cucumber).include?( Guilded.configuration.environment.to_s ) ?
-        local_jquery_name( version, min ) :
+        Guilded.configuration.local_jquery_name( version, min ) :
         Guilded.configuration.jquery_google_url( version )
-    end
-
-    def local_jquery_name( version, min )
-      "assets/jquery-#{version}#{min ? '.min' : ''}"
     end
 
   end

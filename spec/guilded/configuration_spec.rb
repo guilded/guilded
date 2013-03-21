@@ -45,4 +45,24 @@ describe Guilded::Configuration do
     subject.jquery_google_url( '1.8.3' ).should == "https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
   end
 
+  describe "#local_jquery_name" do
+
+    context "when min version is requested" do
+
+      it "should return the correct value" do
+        subject.local_jquery_name( '1.8.3', true ).should == "assets/jquery-1.8.3.min"
+      end
+
+    end
+
+    context "when uncompressed version is requested" do
+
+      it "should return the correct value" do
+        subject.local_jquery_name( '1.8.3', false ).should == "assets/jquery-1.8.3"
+      end
+
+    end
+
+  end
+
 end
