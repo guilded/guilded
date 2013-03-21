@@ -14,5 +14,9 @@ module Guilded::Rails
         Guilded.configuration.jquery_google_url( version )
     end
 
+    def apply_guilded_behavior
+      raw guilded.javascript_initializer
+    end
+
   end
 end

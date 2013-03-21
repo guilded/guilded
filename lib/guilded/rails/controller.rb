@@ -4,6 +4,7 @@ module Guilded::Rails
     def self.included( base )
       base.instance_eval do
         attr_reader :guilded
+        helper_method :guilded
         before_filter :initialize_guilded
       end
 

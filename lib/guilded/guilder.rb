@@ -9,8 +9,8 @@ module Guilded
       @data       = Guilded::Data.new
     end
 
-    def add( component )
-      components << component
+    def add( name, options={} )
+      components << Guilded::Component.new( name, options )
     end
 
     def add_data( new_data )

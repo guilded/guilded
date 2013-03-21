@@ -17,3 +17,6 @@ module Guilded
   end
 
 end
+
+ActionView::Base.send( :include, Guilded::Rails::ViewHelpers ) if defined?( ActionView )
+ActionController::Base.send( :include, Guilded::Rails::Controller ) if defined?( ActionController::Base )

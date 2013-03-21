@@ -9,7 +9,7 @@ describe Guilded::Guilder do
   context "when there are components requiring javascript" do
 
     before :each do
-      guilder.add Guilded::Component.new( :flash_growler, :position => :bottom )
+      guilder.add :flash_growler, :position => :bottom
     end
 
     it "should generate the correct javascript initializer" do
@@ -21,7 +21,7 @@ describe Guilded::Guilder do
   context "when there are no components requiring javascript" do
 
     before :each do
-      guilder.add Guilded::Component.new( :flash_growler, :has_javascript => false, :position => :bottom )
+      guilder.add :flash_growler, :has_javascript => false, :position => :bottom
     end
 
     it "should generate the correct javascript initializer" do
