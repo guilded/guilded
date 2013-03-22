@@ -14,7 +14,7 @@ module Guilded
     end
 
     def local_jquery_name( version, min )
-      "assets/jquery-#{version}#{min ? '.min' : ''}"
+      "/assets/jquery-#{version}#{min ? '.min' : ''}.js"
     end
 
   private

@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec",   "~> 2.0"
 
   spec.add_dependency "activesupport", "~> 3.0"
+  spec.add_dependency "rails", "~> 3.0"
 end

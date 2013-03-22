@@ -1,5 +1,11 @@
-require "guilded/engine"
 require "guilded/version"
+
+begin
+  require "guilded/engine"
+rescue NameError
+  # do nothing on purpose
+end
+
 
 module Guilded
 

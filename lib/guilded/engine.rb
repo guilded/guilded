@@ -3,4 +3,3 @@ module Guilded
     isolate_namespace Guilded
   end
 end
-

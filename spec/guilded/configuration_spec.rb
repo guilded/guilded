@@ -50,7 +50,7 @@ describe Guilded::Configuration do
     context "when min version is requested" do
 
       it "should return the correct value" do
-        subject.local_jquery_name( '1.8.3', true ).should == "assets/jquery-1.8.3.min"
+        subject.local_jquery_name( '1.8.3', true ).should == "/assets/jquery-1.8.3.min.js"
       end
 
     end
@@ -58,7 +58,7 @@ describe Guilded::Configuration do
     context "when uncompressed version is requested" do
 
       it "should return the correct value" do
-        subject.local_jquery_name( '1.8.3', false ).should == "assets/jquery-1.8.3"
+        subject.local_jquery_name( '1.8.3', false ).should == "/assets/jquery-1.8.3.js"
       end
 
     end

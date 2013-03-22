@@ -2,10 +2,10 @@ module Guilded::Rails
   module ViewHelpers
 
     def jquery_include_tag( options={} )
-      version = options.fetch( :version, '1.8.3' )
-      min     = options.fetch( :min, true )
+      version = options.fetch( :version, Guilded.configuration.jquery_version )
+      min     = options.fetch( :min, false )
 
-      "<script source=\"#{jquery_url( version, min )}\" type=\"text/javascript\" />"
+      raw "<script src=\"#{jquery_url( version, min )}\" type=\"text/javascript\"></script>"
     end
 
     def jquery_url( version, min )
