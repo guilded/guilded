@@ -31,6 +31,10 @@ module Guilded
       code
     end
 
+    def component?( name )
+      components.any? { |component| component.name == name }
+    end
+
     def javascript?
      javascript_from_components? || javascript_from_data?
     end

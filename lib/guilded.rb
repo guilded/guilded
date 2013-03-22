@@ -1,3 +1,4 @@
+require "guilded/engine"
 require "guilded/version"
 
 module Guilded

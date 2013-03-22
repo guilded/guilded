@@ -6,6 +6,34 @@ describe Guilded::Guilder do
     subject
   end
 
+  describe "#component?" do
+
+    context "when there is a component already in existence" do
+
+      before :each do
+        guilder.add :flash_growler
+      end
+
+      it "should agree that the component is already defined" do
+        guilder.component?( :flash_growler ).should be_true
+      end
+
+    end
+
+    context "when there is not a component already in existence" do
+
+      before :each do
+        guilder.add :flash_growler
+      end
+
+      it "should agree that the component is already defined" do
+        guilder.component?( :scroll_to ).should be_false
+      end
+
+    end
+
+  end
+
   context "when there are components requiring javascript" do
 
     before :each do
