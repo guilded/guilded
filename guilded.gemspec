@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Guilded::VERSION
   spec.authors       = ["Jason Harrelson"]
   spec.email         = ["jason@lookforwardenterprises.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{A set of tools that work with the Rails asset pipeline to help in authoring GUI components.}
+  spec.summary       = %q{A set of tools that work with the Rails asset pipeline to help in authoring GUI components.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
