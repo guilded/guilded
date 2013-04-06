@@ -22,7 +22,7 @@ describe Guilded::Configuration do
   context "when the jquery_google_url_template is not overridden" do
 
     it "should have the correct value for the jquery_google_url_template" do
-      subject.jquery_google_url_template.should == "https://ajax.googleapis.com/ajax/libs/jquery/{{version}}/jquery.min.js"
+      subject.jquery_google_url_template.should == "//ajax.googleapis.com/ajax/libs/jquery/{{version}}/jquery.min.js"
     end
 
   end
@@ -41,8 +41,30 @@ describe Guilded::Configuration do
 
   end
 
+  context "when the mootools_google_url_template is not overridden" do
+
+    it "should have the correct value for the mootools_google_url_template" do
+      subject.mootools_google_url_template.should == "//ajax.googleapis.com/ajax/libs/mootools/{{version}}/mootools-yui-compressed.js"
+    end
+
+  end
+
+  context "when the mootools_google_url_template is overridden" do
+
+    before :each do
+      Guilded.configure do |config|
+        config.mootools_google_url_template = "something"
+      end
+    end
+
+    it "should have the correct value for the mootools_google_url_template" do
+      subject.mootools_google_url_template.should == "something"
+    end
+
+  end
+
   it "should have return the correct value for jquery_google_url" do
-    subject.jquery_google_url( '1.8.3' ).should == "https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
+    subject.jquery_google_url( '1.8.3' ).should == "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
   end
 
   describe "#local_jquery_name" do
